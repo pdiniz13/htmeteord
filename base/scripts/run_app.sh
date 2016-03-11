@@ -41,4 +41,6 @@ fi
 export PORT=${PORT:-80}
 
 echo "=> Starting meteor app on port:$PORT"
+source '/app/private/config/production/env.sh'
+export METEOR_SETTINGS=`cat /app/settings.json`
 node main.js

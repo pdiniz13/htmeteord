@@ -2,6 +2,7 @@
 set -e
 NODE_VERSION=0.10.41
 NODE_ARCH=x64
+NPM_VERSION=2.14.1
 
 # check we need to do this or not
 
@@ -14,4 +15,7 @@ rm -rf /opt/nodejs
 mv ${NODE_DIST} /opt/nodejs
 
 ln -sf /opt/nodejs/bin/node /usr/bin/node
+/opt/nodejs/bin/npm install --prefix /opt/nodejs -g npm@${NPM_VERSION}
 ln -sf /opt/nodejs/bin/npm /usr/bin/npm
+# ln -sf /opt/nodejs/bin/npm /usr/bin/npm
+
