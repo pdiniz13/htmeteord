@@ -16,17 +16,16 @@ cat <<EOF >> .meteor/platforms
 server
 browser
 EOF
-echo "$0"
-if [ "$1"  == 'true' ]; then
-  # clear out the file
-  > .meteor/platforms
+if [ "$1"  == "true" ]; then
+# clear out the file
+> .meteor/platforms
 
-  # add new strings
-  cat <<EOF >> .meteor/platforms
-  firefoxos
-  server
-  browser
-  EOF
+# add new strings
+cat <<EOF >> .meteor/platforms
+firefoxos
+server
+browser
+EOF
 fi
 
 meteor build --directory $BUNDLE_DIR --server=http://localhost:3000
