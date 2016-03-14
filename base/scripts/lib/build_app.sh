@@ -16,6 +16,10 @@ cat <<EOF >> .meteor/platforms
 server
 browser
 EOF
+
+>&2 echo "$1"
+>&2 echo "$0"
+
 if [ "$1"  == "true" ]; then
 # clear out the file
 > .meteor/platforms
