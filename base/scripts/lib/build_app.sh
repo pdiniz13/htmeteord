@@ -37,7 +37,7 @@ npm i
 mv $BUNDLE_DIR/bundle /built_app
 
 # cleanup
-rm -rf $COPIED_APP_PATH
-rm -rf $BUNDLE_DIR
-rm -rf ~/.meteor
-rm /usr/local/bin/meteor
+rm -rf $COPIED_APP_PATH || true
+rm -rf $BUNDLE_DIR || true
+rm -rf ~/.meteor || true
+rm /usr/local/bin/meteor || true

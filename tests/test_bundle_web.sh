@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function clean() {
-  docker rm -f web
+  docker rm -f web || true
 }
 
 cd /tmp

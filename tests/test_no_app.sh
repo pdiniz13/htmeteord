@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function clean() {
-  docker rm -f no_app
+  docker rm -f no_app || true
 }
 
 cd /tmp

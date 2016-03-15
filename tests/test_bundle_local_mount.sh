@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function clean() {
-  docker rm -f localmount
+  docker rm -f localmount || true
   rm -rf localmount
 }
 

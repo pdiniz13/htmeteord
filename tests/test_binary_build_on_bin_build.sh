@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function clean() {
-  docker rm -f binary_build
+  docker rm -f binary_build || true
 }
 
 cd /tmp

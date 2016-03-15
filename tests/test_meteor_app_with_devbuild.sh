@@ -1,9 +1,9 @@
 #!/bin/bash
 
 function clean() {
-  docker rm -f meteor-app
-  docker rmi -f meteor-app-image
-  rm -rf hello
+  docker rm -f meteor-app || true
+  docker rmi -f meteor-app-image || true
+  rm -rf hello || true
 }
 
 cd /tmp

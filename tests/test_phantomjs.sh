@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function clean() {
-  docker rm -f phantomjs_check
+  docker rm -f phantomjs_check || true
 }
 
 clean
