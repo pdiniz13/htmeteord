@@ -6,9 +6,9 @@ COPY private/ssl/* /etc/nginx/certs/
 COPY private/config/vhost.d/* /etc/nginx/vhost.d/
 
 ARG BUILD_FOR
-ARG MOBILE
+# ARG MOBILE
 
-RUN bash $METEORD_DIR/lib/build_app.sh $MOBILE
+RUN bash $METEORD_DIR/lib/build_app.sh
 
 ENV HTAPP_ENV ${BUILD_FOR:staging}
 

@@ -15,31 +15,31 @@ cp -R /app $COPIED_APP_PATH
 echo "Changing to new dir..."
 cd $COPIED_APP_PATH
 
-echo "Dealing with platforms file..."
-# clear out the file
-> .meteor/platforms
+# echo "Dealing with platforms file..."
+# # clear out the file
+# > .meteor/platforms
 
 # add new strings
-cat <<EOF >> .meteor/platforms
-server
-browser
-EOF
-
-if [ "$1"  == 'true' ]; then
-  echo "Building for mobile..."
-  # clear out the file
-  > .meteor/platforms
-
-  # add new strings
-  cat <<EOF >> .meteor/platforms
-  firefoxos
-  server
-  browser
-EOF
-fi
+# cat <<EOF >> .meteor/platforms
+# server
+# browser
+# EOF
+#
+# if [ "$1"  == 'true' ]; then
+#   echo "Building for mobile..."
+#   # clear out the file
+#   > .meteor/platforms
+#
+#   # add new strings
+#   cat <<EOF >> .meteor/platforms
+#   firefoxos
+#   server
+#   browser
+# EOF
+# fi
 
 echo "Doing meteor 'build' app..."
-sudo meteor build --directory $BUNDLE_DIR --server=http://localhost:3000
+sudo meteor build --directory $BUNDLE_DIR --server=http://localhost:3000 --server-only
 
 echo "Changing to bundle dir..."
 cd $BUNDLE_DIR/bundle/programs/server/
