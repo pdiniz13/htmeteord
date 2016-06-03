@@ -1,4 +1,4 @@
-FROM debian:wheezy
+FROM node:0.10.43-slim
 
 # RUN set -ex \
 #   && for key in \
