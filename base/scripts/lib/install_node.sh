@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
-NODE_VERSION=0.10.43
+NODE_VERSION=0.10.41
 NODE_ARCH=x64
-NPM_VERSION=2.14.1
+NPM_VERSION=2.15.5
 
 # check we need to do this or not
 

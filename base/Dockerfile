@@ -1,4 +1,4 @@
-FROM node:0.10.43-slim
+FROM node:0.10.41-slim
 
 # RUN set -ex \
 #   && for key in \

@@ -39,7 +39,7 @@ cd $COPIED_APP_PATH
 # fi
 
 echo "Doing meteor 'build' app..."
-sudo meteor build --directory $BUNDLE_DIR --server=http://localhost:3000 --server-only
+meteor build --directory $BUNDLE_DIR --server=http://localhost:3000 --server-only
 
 echo "Changing to bundle dir..."
 cd $BUNDLE_DIR/bundle/programs/server/
