@@ -18,9 +18,12 @@ gem 'newrelic_rpm'
 
 gem 'fog'
 
-gem 'dalli',	'~> 2.6.4'
+gem 'net-ssh'
+
+gem 'dalli', '~> 2.6.4'
 
 gem 'application_insights'
+
 
 gem 'cache_digests'
 
@@ -31,18 +34,18 @@ gem 'puma'
 
 # Gems used only for assets and not required
 # in production environments by default.
-gem 'coffee-rails',	 	'~> 3.2.1'
-gem 'bootstrap-sass',	'~> 3.0.3.0'
+gem 'coffee-rails', '~> 3.2.1'
+gem 'bootstrap-sass', '~> 3.0.3.0'
 gem 'jquery-ui-rails', '~> 4.1.2'
 group :assets do
   gem 'ngmin-rails'
-  gem 'sass-rails',	   	'>= 3.2'
+  gem 'sass-rails', '>= 3.2'
   gem 'compass-rails'
   gem 'turbo-sprockets-rails3'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'therubyracer', '>= 0.12.2', :platforms => :ruby
   gem 'uglifier', '>= 1.0.3'
-#  gem 'asset_sync'
+  #  gem 'asset_sync'
   gem 'sprockets-derailleur'
   gem 'fog'
   gem 'sprockets-image_compressor'
@@ -67,6 +70,7 @@ gem 'will_paginate', '~> 3.0'
 gem 'pdfkit'
 gem 'wicked_pdf'
 # gem 'wkhtmltopdf-binary'
+gem 'paypal-sdk-rest'
 
 gem 'nokogiri'
 
@@ -107,7 +111,7 @@ gem 'useragent'
 
 # Deploy with Capistrano
 
-gem 'capistrano',  '~> 3.5.0'
+gem 'capistrano', '~> 3.5.0'
 gem 'capistrano-rails', '~> 1.1'
 gem 'capistrano-rvm'
 #gem 'capistrano-rvm'
@@ -127,6 +131,7 @@ gem 'mina-puma', require: false
 # Emails
 
 gem 'delayed_job_active_record'
+gem 'delayed_job_web'
 gem 'daemons'
 gem 'postmark-rails', '~> 0.8.0'
 gem 'postmark-mitt'
@@ -154,7 +159,6 @@ gem 'awesome_print'
 gem 'rack-mini-profiler'
 gem 'sanitize'
 
-gem 'paypal-sdk-merchant'
 gem 'open-weather'
 gem 'mobile-fu'
 gem 'browser', '~> 0.8.0'
@@ -193,14 +197,16 @@ group :development, :staging do
   # sudo apt-get install graphviz ps2pdf for ubuntu
 end
 
+group :development, :test do
+  gem 'launchy'
+end
 
 group :test do
   gem 'delorean'
-  gem 'launchy'
-  gem 'webmock'#, '~> 1.15.1'
+  gem 'webmock' #, '~> 1.15.1'
   gem 'vcr', '~> 3.0.2'
   gem 'rake'
-  gem 'rspec', '~> 2.14.1'#, '~> 3.0.0.beta2'
+  gem 'rspec', '~> 2.14.1' #, '~> 3.0.0.beta2'
   # todo migrate to rspec3 when
   # this pull request is accepted
   # https://github.com/guard/guard-rspec/pull/250
@@ -208,9 +214,8 @@ group :test do
   gem 'guard-rspec'
   gem 'guard-zeus'
   gem 'zeus', '~> 0.15.4'
-  gem 'rspec-rails', '~> 2.14.1'#, '~> 3.0.0.beta'
-  gem 'factory_girl', '~> 4.5.0'
-  gem 'factory_girl_rails', '~> 4.5.0'
+  gem 'rspec-rails', '~> 2.14.1' #, '~> 3.0.0.beta'
+  gem 'factory_girl_rails', '~> 4.5.0', require: false
   gem 'shoulda-matchers'
   gem 'capybara'
   #gem 'capybara-webkit'
@@ -256,3 +261,5 @@ gem 'google_drive'
 
 # some nice stuff for params processing
 gem 'strong_parameters'
+
+gem 'lru_redux'
