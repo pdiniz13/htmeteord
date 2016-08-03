@@ -16,6 +16,11 @@ tar -xvzf openresty-1.9.7.5.tar.gz
 cd openresty-1.9.7.5
 ./configure --with-luajit --with-http_gzip_static_module --with-http_iconv_module --with-ipv6 && make && make install
 cd ..
+wget https://htstatic.blob.core.windows.net/static/mesos/phantomjs-2.1.1-linux-x86_64.tar.bz2
+export PHANTOM_JS="phantomjs-2.1.1-linux-x86_64"
+tar xvjf $PHANTOM_JS.tar.bz2
+mv $PHANTOM_JS /usr/local/share
+ln -sf /usr/local/share/$PHANTOM_JS/bin/phantomjs /usr/local/bin
 rm -rf /var/lib/apt/lists/*
 gem install rails --version "$RAILS_VERSION"
 cd $RUBY_DIR
