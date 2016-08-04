@@ -14,8 +14,6 @@ gem 'mysql2'
 gem 'geocoder', '~> 1.2.1'
 gem 'linkedin'
 
-gem 'newrelic_rpm'
-
 gem 'fog'
 
 gem 'net-ssh'
@@ -47,7 +45,6 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
   #  gem 'asset_sync'
   gem 'sprockets-derailleur'
-  gem 'fog'
   gem 'sprockets-image_compressor'
   gem 'unf'
 end
@@ -171,7 +168,6 @@ group :development do
   gem 'guard-livereload', require: false
   gem "bullet"
   gem 'mail_view', "~> 2.0.4"
-  gem 'byebug'
   unless ['dmitry'].include?(developer)
     gem 'sunspot_solr'
     platforms :mri do
@@ -199,6 +195,7 @@ end
 
 group :development, :test do
   gem 'launchy'
+  gem 'byebug'
 end
 
 group :test do
@@ -222,7 +219,6 @@ group :test do
   gem 'database_cleaner'
   gem 'selenium-webdriver'
   #gem 'cucumber-rails', :require => false
-  gem 'byebug'
 end
 
 gem 'poltergeist'
@@ -232,9 +228,10 @@ gem 'rmagick'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'puma'
-  gem 'passenger'
+  # gem 'passenger'
 end
+
+gem 'open_uri_redirections', '>= 0.2.1'
 
 group :never_run do
   gem 'sunspot_solr'
@@ -244,9 +241,6 @@ group :never_run do
 end
 
 gem 'oj'
-
-# gem 'thin'
-gem 'puma'
 
 gem 'posix-spawn'
 
