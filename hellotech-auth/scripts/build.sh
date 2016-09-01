@@ -16,7 +16,6 @@ tar -xvzf openresty-1.9.7.5.tar.gz
 cd openresty-1.9.7.5
 ./configure --with-luajit --with-http_gzip_static_module --with-http_iconv_module --with-ipv6 && make && make install
 cd ..
-wget https://htstatic.blob.core.windows.net/static/mesos/phantomjs-2.1.1-linux-x86_64.tar.bz2
 rm -rf /var/lib/apt/lists/*
 gem install rails --version "$RAILS_VERSION"
 cd $RUBY_DIR
