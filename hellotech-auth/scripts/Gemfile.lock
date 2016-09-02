@@ -40,6 +40,7 @@ GEM
       tzinfo (~> 1.1)
     arel (7.1.1)
     bcrypt (3.1.11)
+    bugsnag (5.0.0)
     builder (3.2.2)
     byebug (9.0.5)
     concurrent-ruby (1.0.2)
@@ -69,6 +70,7 @@ GEM
     mini_portile2 (2.1.0)
     minitest (5.9.0)
     mysql2 (0.4.4)
+    newrelic_rpm (3.16.2.321)
     nio4r (1.2.1)
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
@@ -133,11 +135,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bugsnag
   byebug
   devise (~> 4.2.0)
   jwt
   listen (~> 3.0.5)
   mysql2 (>= 0.3.18, < 0.5)
+  newrelic_rpm
   puma (~> 3.0)
   rails (~> 5.0.0, >= 5.0.0.1)
   spring
