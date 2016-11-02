@@ -5,13 +5,13 @@ if File.exist? "developer"
   developer = File.read "developer"
 end
 
-gem 'rails', '3.2.22.4'
+gem 'rails', '~> 4.0.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2'
-gem 'geocoder', '~> 1.2.1'
+gem 'pg'
+gem 'geocoder'
 gem 'linkedin'
 gem 'lograge'
 gem 'logstash-event'
@@ -20,55 +20,58 @@ gem 'fog'
 
 gem 'net-ssh'
 
-gem 'coverband', '~> 1.1'
-gem 'redis', '~>3.2'
+gem 'coverband'
+gem 'redis'
 
-gem 'dalli', '~> 2.6.4'
+gem 'dalli'
 
 gem 'application_insights'
 
+# Added for backward compatibility with attr_accessible
+gem 'protected_attributes'
+
+gem 'turbolinks'
 
 gem 'cache_digests'
 
-gem 'nio4r', '~> 1.1.1'
+gem 'nio4r'
 
 gem 'unicorn'
 gem 'puma'
 
 # Gems used only for assets and not required
 # in production environments by default.
-gem 'coffee-rails', '~> 3.2.1'
-gem 'bootstrap-sass', '~> 3.0.3.0'
-gem 'jquery-ui-rails', '~> 4.1.2'
-group :assets do
-  gem 'ngmin-rails'
-  gem 'sass-rails', '>= 3.2'
-  gem 'compass-rails'
-  gem 'turbo-sprockets-rails3'
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  gem 'therubyracer', '>= 0.12.2', :platforms => :ruby
-  gem 'uglifier', '>= 1.0.3'
-  #  gem 'asset_sync'
-  gem 'sprockets-derailleur'
-  gem 'sprockets-image_compressor'
-  gem 'unf'
-end
+gem 'coffee-rails'
+gem 'bootstrap-sass'
+gem 'jquery-ui-rails'
+# gem 'ngmin-rails'
+gem 'ngannotate-rails'
+gem 'sass-rails'
+gem 'compass-rails'
+# gem 'turbo-sprockets-rails3'
+# See https://github.com/sstephenson/execjs#readme for more supported runtimes
+gem 'therubyracer', :platforms => :ruby
+gem 'uglifier'
+#  gem 'asset_sync'
+gem 'sprockets-derailleur'
+gem 'sprockets-image_compressor'
+gem 'unf'
 
 group :development, :test do
-  gem 'webrick', '~> 1.3.1'
+  gem 'webrick'
   gem 'quiet_assets'
   # Debugging
   gem 'pry'
 end
 
 gem "google_visualr"
-gem 'balanced', '~> 1.0'
+gem 'balanced'
 gem 'stripe'
-gem 'paperclip', '~> 4.3'
+gem 'paperclip'
 # gem 'paperclip-compression'
 gem 'aws-sdk'
 gem 'data_uri'
-gem 'will_paginate', '~> 3.0'
+gem 'will_paginate'
 gem 'pdfkit'
 gem 'wicked_pdf'
 # gem 'wkhtmltopdf-binary'
@@ -82,19 +85,19 @@ gem 'jquery-rails'
 
 # Authentification
 
-gem 'devise', '~> 2.2.3'
-gem 'omniauth-facebook', '>= 2.0.1'
+gem 'devise'
+gem 'omniauth-facebook'
 gem 'omniauth-linkedin'
 
 gem 'flamegraph'
-gem 'stackprof', '~> 0.2.7'
+gem 'stackprof'
 gem 'twilio-ruby'
 gem 'pusher'
 
 # gem 'gibbon', '~> 2.2.0'
 
-gem 'timezone', '~> 0.3.1'
-gem 'celluloid', '~> 0.15.2'
+gem 'timezone'
+gem 'celluloid'
 gem 'whenever', :require => false
 gem 'httparty'
 
@@ -105,14 +108,20 @@ gem 'useragent'
 
 # To use Jbuilder templates for JSON
 #gem 'jbuilder'
+gem 'jbuilder'
+
+group :doc do
+  # bundle exec rake doc:rails generates the API under doc/api.
+  gem 'sdoc', require: false
+end
 
 # Use unicorn as the app server
 # gem 'unicorn'
 
 # Deploy with Capistrano
 
-gem 'capistrano', '~> 3.5.0'
-gem 'capistrano-rails', '~> 1.1'
+gem 'capistrano'
+gem 'capistrano-rails'
 gem 'capistrano-rvm'
 #gem 'capistrano-rvm'
 
@@ -133,19 +142,19 @@ gem 'mina-puma', require: false
 gem 'delayed_job_active_record'
 gem 'delayed_job_web'
 gem 'daemons'
-gem 'postmark-rails', '~> 0.8.0'
+gem 'postmark-rails'
 gem 'postmark-mitt'
-gem 'roadie', '~> 2.4.3'
-gem 'signet', '~> 0.7.1'
-gem 'listen', '~> 2.7.0'
+gem 'roadie'
+gem 'signet'
+gem 'listen'
 gem 'cancan'
 
 group :production, :staging do
   gem 'newrelic_rpm'
 end
 gem 'sunspot_rails'
-gem 'google-adwords-api', '~> 0.19.0'
-gem 'google-api-client', '>= 0.7'
+gem 'google-adwords-api'
+gem 'google-api-client'
 gem 'premailer'
 gem 'country_select', github: 'stefanpenner/country_select'
 gem "recaptcha", :require => "recaptcha/rails"
@@ -163,7 +172,7 @@ gem 'sanitize'
 
 gem 'open-weather'
 gem 'mobile-fu'
-gem 'browser', '~> 0.8.0'
+gem 'browser'
 gem 'ancestry' # use it for tree-based models
 gem 'roo'
 gem 'roo-xls'
@@ -176,7 +185,7 @@ group :development do
   #       Stop "guard", run "zeus start" and run "guard" again. Don't forget to restart your Rails server
   gem 'guard-livereload', require: false
   gem "bullet"
-  gem 'mail_view', "~> 2.0.4"
+  gem 'mail_view'
   unless ['dmitry'].include?(developer)
     gem 'sunspot_solr'
     platforms :mri do
@@ -195,8 +204,8 @@ group :development, :staging, :staging2 do
   # PROFILING:
 
   # it's better to build it manually https://github.com/tmm1/perftools.rb
-  gem 'perftools.rb', '~> 2.0.4'
-  gem 'rack-perftools_profiler', '~> 0.6.1', :require => 'rack/perftools_profiler'
+  # gem 'perftools.rb'
+  # gem 'rack-perftools_profiler', :require => 'rack/perftools_profiler'
   # sudo apt-get install ruby1.9.1-dev
   # sudo brew    install graphviz ghostscript # osx
   # sudo apt-get install graphviz ps2pdf for ubuntu
@@ -210,18 +219,18 @@ end
 group :test do
   gem 'delorean'
   gem 'webmock' #, '~> 1.15.1'
-  gem 'vcr', '~> 3.0.2'
+  gem 'vcr'
   gem 'rake'
-  gem 'rspec', '~> 2.14.1' #, '~> 3.0.0.beta2'
+  gem 'rspec' #, '~> 3.0.0.beta2'
   # todo migrate to rspec3 when
   # this pull request is accepted
   # https://github.com/guard/guard-rspec/pull/250
   gem 'guard'
   gem 'guard-rspec'
   gem 'guard-zeus'
-  gem 'zeus', '~> 0.15.4'
-  gem 'rspec-rails', '~> 2.14.1' #, '~> 3.0.0.beta'
-  gem 'factory_girl_rails', '~> 4.5.0', require: false
+  gem 'zeus'
+  gem 'rspec-rails' #, '~> 3.0.0.beta'
+  gem 'factory_girl_rails', require: false
   gem 'shoulda-matchers'
   gem 'capybara'
   #gem 'capybara-webkit'
@@ -237,11 +246,11 @@ gem 'rmagick'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'rails-dev-tweaks', '~> 1.1'
+  gem 'rails-dev-tweaks'
   # gem 'passenger'
 end
 
-gem 'open_uri_redirections', '>= 0.2.1'
+gem 'open_uri_redirections'
 
 group :never_run do
   gem 'sunspot_solr'
@@ -258,16 +267,16 @@ gem 'transaction_retry'
 
 # sharing button
 gem 'social-share-button'
-gem 'maxminddb', '0.1.8'
+gem 'maxminddb'
 
 # gdrive
 gem 'google_drive'
 
 # some nice stuff for params processing
-gem 'strong_parameters'
+# gem 'strong_parameters'
 
 gem 'lru_redux'
 
 gem 'jwt'
 
-gem 'sucker_punch', '~> 2.0'
+gem 'sucker_punch'
