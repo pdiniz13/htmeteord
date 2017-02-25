@@ -17,11 +17,14 @@ gem 'net-ssh'
 
 gem 'coverband', '~> 1.1'
 gem 'redis', '~>3.2'
+gem 'redis-namespace'
 gem 'hellosign-ruby-sdk'
 
 gem 'dalli', '~> 2.6.4'
+gem 'htmlentities'
 
-gem 'application_insights'
+# Added to integrate Segment.io to ease adding multiple tracking tags
+gem 'analytics-ruby', '~> 2.0.0', :require => 'segment/analytics'
 
 gem 'cache_digests'
 
@@ -92,6 +95,7 @@ gem 'timezone', '~> 0.3.1'
 gem 'celluloid', '~> 0.15.2'
 gem 'whenever', require: false
 gem 'httparty'
+gem 'savon'
 
 gem 'useragent'
 
@@ -157,7 +161,6 @@ gem 'awesome_print'
 gem 'rack-mini-profiler'
 gem 'sanitize'
 
-gem 'open-weather'
 gem 'mobile-fu'
 gem 'browser', '~> 0.8.0'
 gem 'ancestry' # use it for tree-based models
@@ -184,6 +187,7 @@ group :development do
   gem 'traceroute', require: false
   gem 'debride'
   gem 'debride-erb'
+  # gem 'derailed', require: false
 end
 
 group :development, :staging, :staging2 do
@@ -199,6 +203,8 @@ group :development, :staging, :staging2 do
   # sudo apt-get install ruby1.9.1-dev
   # sudo brew    install graphviz ghostscript # osx
   # sudo apt-get install graphviz ps2pdf for ubuntu
+
+  # gem 'ruby-prof', require: false
 end
 
 group :development, :test do
@@ -271,7 +277,10 @@ gem 'lru_redux'
 
 gem 'jwt'
 
-gem 'sucker_punch', '~> 2.0'
-
 # Sendinblue for subscription emails
 gem 'sendinblue'
+
+gem 'sidekiq', '~> 4.2.7'
+
+gem 'grpc', '~> 1.0.0'
+gem 'grpc-tools', '~> 1.1.0'

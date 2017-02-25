@@ -9,11 +9,12 @@ echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /u
 echo "deb http://ftp.us.debian.org/debian/ oldstable main contrib non-free" >> /etc/apt/sources.list
 echo "deb-src http://ftp.us.debian.org/debian/ oldstable main contrib non-free" >> /etc/apt/sources.list
 apt-get -y update
-apt-get install -y nodejs git nano ntp oracle-java8-installer oracle-java8-set-default unzip xfonts-base xorg-sgml-doctools discover htop libcroco3 liblzo2-2 libudev1 libpthread-stubs0-dev --no-install-recommends
-wget https://openresty.org/download/openresty-1.9.7.5.tar.gz
-tar -xvzf openresty-1.9.7.5.tar.gz
-cd openresty-1.9.7.5
+apt-get install -y git nano ntp oracle-java8-installer oracle-java8-set-default unzip xfonts-base xorg-sgml-doctools discover htop libcroco3 liblzo2-2 libudev1 libpthread-stubs0-dev --no-install-recommends
+wget https://openresty.org/download/openresty-1.11.2.2.tar.gz
+tar -xvzf openresty-1.11.2.2.tar.gz
+cd openresty-1.11.2.2
 ./configure --with-luajit --with-http_gzip_static_module --with-http_iconv_module --with-ipv6 && make && make install
+cd ..
 apt-key adv --fetch-keys http://dl.yarnpkg.com/debian/pubkey.gpg
 echo "deb http://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 apt-get -y update && apt-get install -y yarn
