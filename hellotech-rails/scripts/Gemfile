@@ -5,15 +5,14 @@ gem 'rails', '3.2.22.4'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2'
-gem 'geocoder', '~> 1.2.1'
+gem 'mysql2', '= 0.3.17'
+gem 'geocoder', '~> 1.4.4'
 gem 'linkedin'
 gem 'lograge'
 gem 'logstash-event'
 
-gem 'fog'
-
 gem 'net-ssh'
+gem 'puma_worker_killer'
 
 gem 'coverband', '~> 1.1'
 gem 'redis', '~>3.2'
@@ -30,14 +29,13 @@ gem 'cache_digests'
 
 gem 'nio4r', '~> 1.1.1'
 
-gem 'unicorn'
 gem 'puma'
 
 # Gems used only for assets and not required
 # in production environments by default.
 gem 'coffee-rails', '~> 3.2.1'
 gem 'bootstrap-sass', '~> 3.0.3.0'
-gem 'jquery-ui-rails', '~> 4.1.2'
+gem 'jquery-ui-rails', '~> 6.0.1'
 group :assets do
   gem 'ngmin-rails'
   gem 'sass-rails', '>= 3.2'
@@ -60,11 +58,9 @@ group :development, :test do
 end
 
 gem 'google_visualr'
-gem 'balanced', '~> 1.0'
 gem 'stripe'
 gem 'paperclip', '~> 4.3'
 # gem 'paperclip-compression'
-gem 'aws-sdk'
 gem 'data_uri'
 gem 'will_paginate', '~> 3.0'
 gem 'pdfkit'
@@ -105,9 +101,6 @@ gem 'useragent'
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 
-# Use unicorn as the app server
-# gem 'unicorn'
-
 # Deploy with Capistrano
 
 gem 'capistrano', '~> 3.5.0'
@@ -134,7 +127,6 @@ gem 'delayed_job_web'
 gem 'daemons'
 gem 'postmark-rails', '~> 0.8.0'
 gem 'postmark-mitt'
-gem 'roadie', '~> 2.4.3'
 gem 'signet', '~> 0.7.1'
 gem 'listen', '~> 2.7.0'
 gem 'cancan'
@@ -148,7 +140,6 @@ gem 'google-api-client', '>= 0.7'
 gem 'premailer'
 gem 'country_select', github: 'stefanpenner/country_select'
 gem 'recaptcha', require: 'recaptcha/rails'
-gem 'faker'
 
 group :development, :production, :staging, :staging2, :qac do
   # gem 'airbrake'
@@ -234,6 +225,7 @@ group :test do
   # gem 'capybara-webkit'
   gem 'database_cleaner'
   gem 'selenium-webdriver'
+  gem 'faker'
   # gem 'cucumber-rails', :require => false
 end
 
@@ -242,7 +234,7 @@ gem 'phantomjs' # , :require => 'phantomjs/poltergeist'
 gem 'rmagick'
 
 group :development do
-  gem 'better_errors'
+  # gem 'better_errors'
   gem 'binding_of_caller'
   gem 'rails-dev-tweaks', '~> 1.1'
   # gem 'passenger'
@@ -282,5 +274,15 @@ gem 'sendinblue'
 
 gem 'sidekiq', '~> 4.2.7'
 
-gem 'grpc', '~> 1.0.0'
-gem 'grpc-tools', '~> 1.1.0'
+# gem 'grpc', '~> 1.0.0'
+# gem 'grpc-tools', '~> 1.1.0'
+gem 'bootsnap', git: 'git://github.com/TheRusskiy/bootsnap.git', branch: 'feature/active-support-3'
+gem 'gon'
+
+
+# pdf manipulation
+gem 'prawn'
+gem 'pdf-reader'
+gem 'combine_pdf'
+
+gem 'faraday_middleware'
